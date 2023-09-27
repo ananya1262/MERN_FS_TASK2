@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 8</title>
+  </head>
+
+  <body id="gradient">
+    <center>
+      <!-- <input class="color1" type="color" name="color1" value="#00ff00">
+      <input class="color2" type="color" name="color2" value="#002300"> -->
+      <h1 style="color: blue">Registration form</h1>
+      <form name="myform" action="#" onsubmit="return validate()">
+        <table style="border: 0">
+          <tbody>
+            <tr>
+              <td style="text-align: right">
+                <label for="fname" style="margin-right: 10px;"><b>First Name</b></label>
+              </td>
+              <td><input type="text" name="name" id="name" size="60"  /></td>
+              <td>
+                <span id="f1"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="lname"  style="margin-right: 10px;"><b>Last Name</b></label>
+              </td>
+              <td><input name="lname" id="lname" type="text" size="60" /></td>
+              <td>
+                <span id="f2"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="email" style="margin-right: 10px;"><b>Email</b></label>
+              </td>
+              <td><input type="email" name="email" id="email" size="60" /></td>
+              <td>
+                <span id="f3"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="password" style="margin-right: 10px;"><b>Password</b></label>
+              </td>
+              <td>
+                <input name="password" id="password" type="password" size="60"/>
+              </td>
+              <td>
+                <span id="f4"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="repassword" style="margin-right: 10px;"><b>Re-enter Password</b></label>
+              </td>
+              <td>
+                <input id="repassword" name="repassword" type="password"size="60"/>
+              </td>
+              <td>
+                <span id="f5"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="gender" style="margin-right: 10px;"><b>Gender</b></label>
+              </td>
+              <td>
+                <input type="radio" name="gender" id="gender" />
+                <label for="" value="male">Male</label>
+                <br>
+                <input type="radio" name="gender" id="gender1" />
+                <label for="" value="female">Female</label>
+              </td>
+              <td>
+                <span id="f11"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="age"style="margin-right: 10px;"><b>Age</b></label>
+              </td>
+              <td>
+                <input id="age" name="age" type="number"/>
+              </td>
+              <td>
+                <span id="f7"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="phone" style="margin-right: 10px;"><b>Phone Number</b></label>
+              </td>
+              <td><input type="text" name="phone" id="phone" size="60" /></td>
+              <td>
+                <span id="f6"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="address"style="margin-right: 10px;"><b>Address</b></label>
+              </td>
+              <td>
+                <textarea cols="56" rows="7" id="address" name="address"></textarea>
+              </td>
+              <td>
+                <span id="f8"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="state" style="margin-right: 10px;"><b>State</b></label>
+              </td>
+              <td><input id="state" name="state" type="text" size="60" /></td>
+              <td>
+                <span id="f9"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="country" style="margin-right: 10px;"><b>Country</b></label>
+              </td>
+              <td>
+                <select name="country" id="country" style="margin-bottom: 4px;">
+                  <option for="country">Choose your country</option>
+                  <option for="country">India</option>
+                  <option for="country">Canada</option>
+                  <option for="country">USA</option>
+                  <option for="country">France</option>
+                  <option for="country">Germany</option>
+                </select>
+              </td>
+              <td>
+                <span id="f10"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for="l" style="margin-right: 10px; "><b>Languages known</b></label>
+              </td>
+              <td>
+                <input type="checkbox" id="l1" name="l1" value="English" />
+                <label for="l">English</label>
+                <input type="checkbox" id="l2" name="l2" value="Kannada" />
+                <label for="l">Kannada</label>
+                <input type="checkbox" id="l3" name="l3" value="Hindi" />
+                <label for="l">Hindi</label>
+                <input type="checkbox" id="l4" name="l4" value="Telugu" />
+                <label for="l">Telugu</label>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="10">
+                <input type="checkbox" value="clicked" name="checkbox1" id="checkbox" style="margin-bottom: 9px;margin-top: 7px;"/>
+                <label value="hereby">Hereby I declare all the given details are true</label>
+              </td>
+              <td>
+                <span id="f12"></span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="10" id="value" style="text-align: right;padding-right: 130px;">
+                Log in to <a href="https://ethnus.com/">Ethnus</a> website
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <button class="btn btn-danger" type=" Submit"><u>Register</u></button>
+      </form>
+    </center>
+  </body>
+  <style>
+    body {
+      border: 0px black;
+      margin-bottom: 122px;
+      /* background: linear-gradient(to bottom, yellow,pink); */
+      background-color: #f0f0f0;
+    }
+    input
+    {
+      margin-bottom: 4px;
+      margin-right: 2px;
+    }
+    #f12 {
+      margin-left: -120%;
+    }
+    .btn {
+      width: 100px;
+      height: 28px;
+      font-size: 15px;
+      background-color: red;
+      border: 2px solid black;
+      border-radius: 50px 50px 50px 50px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    function setGradientBackground() {
+            const gradientStyle = `background: linear-gradient(to bottom, #FFFFC0, #FF6B81);`;
+            const style = document.createElement("style");
+            style.textContent = `body { ${gradientStyle} }`;
+            document.head.appendChild(style);
+        }
+        setGradientBackground();
+     var color1 = document.querySelector(".color1");
+    var color2 = document.querySelector(".color2");
+    function validate() {
+      let a = document.forms["myform"]["name"].value;
+      if (a == "") {
+        var element = document.getElementById("name");
+        element.style.borderWidth = "2px";
+        element.style.borderColor = "red";
+        element.style.borderStyle = "solid";
+        error = "POOR";
+        document.getElementById("f1").innerHTML = error;
+        document.getElementById("f1").style.color = "red";
+      }
+      let b = document.forms["myform"]["lname"].value;
+      if (b == "") {
+        var element = document.getElementById("lname");
+        element.style.borderWidth = "2px";
+        element.style.borderColor = "red";
+        element.style.borderStyle = "solid";
+        error = "POOR";
+        document.getElementById("f2").innerHTML = error;
+        document.getElementById("f2").style.color = "red";
+      }
+      let c = document.forms["myform"]["email"].value;
+      if (c == "") {
+        var element = document.getElementById("email");
+        element.style.borderWidth = "2px";
+        element.style.borderColor = "red";
+        element.style.borderStyle = "solid";
+        error = "POOR";
+        document.getElementById("f3").innerHTML = error;
+        document.getElementById("f3").style.color = "red";
+      }
+      let d = document.forms["myform"]["password"].value;
+      if (d == "") {
+        var element = document.getElementById("password");
+        element.style.borderWidth = "2px";
+        element.style.borderColor = "red";
+        element.style.borderStyle = "solid";
+        error = "POOR";
+        document.getElementById("f4").innerHTML = error;
+        document.getElementById("f4").style.color = "red";
+      }
+      let e = document.forms["myform"]["repassword"].value;
+      if (e == "") {
+        var element = document.getElementById("repassword");
+        element.style.borderWidth = "2px";
+        element.style.borderColor = "red";
+        element.style.borderStyle = "solid";
+        error = "POOR OR MISMATCH";
+        document.getElementById("f5").innerHTML = error;
+        document.getElementById("f5").style.color = "red";
+      }
+      let f = document.forms["myform"]["phone"].value;
+      if (f == "") {
+        var element = document.getElementById("phone");
+        element.style.borderWidth = "2px";
+        element.style.borderColor = "red";
+        element.style.borderStyle = "solid";
+        error = "POOR";
+        document.getElementById("f6").innerHTML = error;
+        document.getElementById("f6").style.color = "red";
+      }
+      let g = document.forms["myform"]["age"].value;
+      if (g == "") {
+        var element = document.getElementById("age");
+        element.style.borderWidth = "2px";
+        element.style.borderColor = "red";
+        element.style.borderStyle = "solid";
+        error = "POOR";
+        document.getElementById("f7").innerHTML = error;
+        document.getElementById("f7").style.color = "red";
+      }
+      let h = document.forms["myform"]["address"].value;
+      if (h == "") {
+        var element = document.getElementById("address");
+        element.style.borderWidth = "2px";
+        element.style.borderColor = "red";
+        element.style.borderStyle = "solid";
+        var ele = document.getElementById("f8");
+        ele.style.color = "red";
+        error = "POOR";
+        document.getElementById("f8").innerHTML = error;
+        document.getElementById("f8").style.color = "red";
+      }
+      let i = document.forms["myform"]["state"].value;
+      if (i == "") {
+        var element = document.getElementById("state");
+        element.style.borderWidth = "2px";
+        element.style.borderColor = "red";
+        element.style.borderStyle = "solid";
+        error = "POOR";
+        document.getElementById("f9").innerHTML = error;
+        document.getElementById("f9").style.color = "red";
+      }
+      else
+      {
+        error = " ";
+        document.getElementById("f9").innerHTML = error;
+      }
+      let j = document.forms["myform"]["country"].value;
+      if (j == "") {
+        var element = document.getElementById("country");
+        element.style.borderWidth = "2px";
+        element.style.borderColor = "red";
+        element.style.borderStyle = "solid";
+        error = "POOR";
+        document.getElementById("f10").innerHTML = error;
+        document.getElementById("f10").style.color = "red";
+      }
+    }
+  </script>
+</html>

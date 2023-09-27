@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 5</title>
+  </head>
+  <body>
+    <div class="myform">
+      <form name="myform" onsubmit="return validateForm()" action="#">
+        &emsp;&nbsp;Name:&nbsp;<input
+          type="text"
+          name="fname"
+          id="fname"
+        /><span id="f1" style="color: red"></span>
+        <br />
+        <br />
+        &emsp;&nbsp;Email:&nbsp;<input
+          type="text"
+          name="email"
+          id="email"
+        /><span id="f2" style="color: red"></span>
+        <br />
+        <br />
+        &nbsp;&nbsp;Website:&nbsp;<input
+          type="text"
+          name="website"
+          id="website"
+        /><span id="f3" style="color: red"></span>
+        <br />
+        <br />
+        Message:&nbsp;
+        <textarea rows="3"cols="30"name="messsage"id="message"></textarea>
+        <span id="f4" style="color: red;"></span>
+        <br />
+        <br />
+        &emsp;&emsp;&emsp;&emsp;&nbsp;<button onclick="validateForm()">Submit</button>
+      </form>
+    </div>
+    <div id="result"></div>
+    <script>
+      let count = 0;
+      function validateForm() {
+        let x = document.forms["myform"]["fname"].value;
+        if (x == "") {
+          var element = document.getElementById("fname");
+          element.style.borderWidth = "3px";
+          element.style.borderColor = "red";
+          error = "&emsp;This field is required";
+          document.getElementById("f1").innerHTML = error;
+          count++;
+        }
+        let y = document.forms["myform"]["email"].value;
+        if (y == "") {
+          var element = document.getElementById("email");
+          element.style.borderWidth = "3px";
+          element.style.borderColor = "red";
+          error = "&emsp;A valid email address is required";
+          document.getElementById("f2").innerHTML = error;
+          count++;
+        }
+      
+        let z = document.forms["myform"]["website"].value;
+        if (z == "") {
+          var element = document.getElementById("website");
+          element.style.borderWidth = "3px";
+          element.style.borderColor = "red";
+          error = "&emsp;A valid url is required";
+          document.getElementById("f3").innerHTML = error;
+          count++;
+        }
+
+        let w = document.forms["myform"]["message"].value;
+        if (w == "") {
+          var element = document.getElementById("message");
+          element.style.borderWidth = "3px";
+          element.style.borderColor = "red";
+          element.style.borderStyle = "solid";
+          error = "&emsp;This field is required";
+          document.getElementById("f4").innerHTML = error;
+          count++;
+        }
+      }
+    </script>
+    <style>
+      .myform {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        height: 90vh;
+      }
+      input,
+      textarea {
+        border-style: none;
+        border: 1px solid;
+      }
+    </style>
+  </body>
+</html>

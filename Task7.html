@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 1</title>
+</head>
+<body>
+    <div class="reverse">
+        <form action="#">
+          <input type="number" id="num" />
+          <br />
+          <br />
+          <center><button onclick="reverse()">Reverse</button></center>
+          <br />
+          <div id="n"></div>
+        </form>
+      </div>
+      <style>
+        .reverse {
+          display: flex;
+          justify-content: left;
+          align-items: left;
+          margin: 10px;
+          height: 50vh;
+        }
+    </style>
+    <script>
+        function reverse() {
+          let a = document.getElementById("num").value;
+          let k = "";
+          for (let i = a.length - 1; i >= 0; i--) {
+            k = k + a[i];
+          }
+          document.getElementById("n").innerHTML = k;
+          document.write("Reversed number: "+k)
+        }
+      </script>
+</body>
+</html>

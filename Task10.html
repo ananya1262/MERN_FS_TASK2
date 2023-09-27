@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 4</title>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <button onclick="getdate()">show date</button>
+            <div id="date"></div>
+        </div>
+        <br>
+        <br>
+        <div>
+            <button onclick="gettime()">show Time</button>
+            <div id="time"></div>
+        </div>
+    </div>
+
+    <style>
+        .main
+        {
+            justify-content: center;
+            align-items: center;
+            margin: 100px;
+        }
+    </style>
+        
+    <script>
+        function getdate()
+        {
+            const date = new Date();
+            let day = date.getDate();
+            let monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+            ];
+            let month = date.getMonth();
+            let currentMonth = monthNames[month];
+            let year = date.getFullYear();
+            let currentDate = `${day}/${currentMonth}/${year}`;
+            document.getElementById("date").innerHTML = currentDate;
+        } 
+        function gettime(){
+            const date=new Date();
+            document.getElementById("time").innerHTML = date;
+        }
+    </script>
+</body>
+</html>

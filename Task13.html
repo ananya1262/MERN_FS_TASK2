@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 7</title>
+</head>
+<body>
+    <div id="animation">
+        <img id="object" src="./train.png" />
+      </div>
+      <br />
+      <br />
+      <center>
+        <h1>Click the following buttons to handle animation</h1>
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+      </center>
+  
+      <script>
+        const element = document.getElementById("object");
+        let animationInterval = null;
+        let isAnimating = false;
+  
+        function start() {
+          if (!isAnimating) {
+            element.style.animation = "myfirst 7s linear infinite";
+            isAnimating = true;
+          }
+        }
+  
+        function stop() {
+          if (isAnimating) {
+            element.style.animation = "none";
+            isAnimating = false;
+          }
+        }
+      </script>
+    </body>
+  
+    <style>
+      #object {
+        position: relative;
+        animation: none; 
+      }
+      @keyframes myfirst {
+        0% {
+          left: 0%;
+        }
+        100% {
+          left: 75%;
+        }
+      }
+      button {
+        width: 7%;
+        height: 4vh;
+      }
+      h1 {
+        color: rgb(0, 0, 132);
+      }
+    </style>
+</body>
+</html>

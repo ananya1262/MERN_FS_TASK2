@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 3</title>
+</head>
+<body>
+    <div class="main">
+        <form style="border:1px solid black;  padding:1%;" action="#" >
+          <label>1st Number:</label>
+          <input type="text" id="n1" style="margin-left:5px;margin-bottom: 5px;"/>
+          <br>
+          <label>2nd Number:</label>
+          <input type="text" id="n2" style="margin-bottom: 5px;">
+    
+          <br>
+          <button class="btn info" onclick="multiply()">Multiply</button>
+          <button class="btn info" onclick="divide()">Divide</button>
+    
+          <p>
+            The Result Is:
+            <p id="result"></p>
+          </p>
+        </form>
+    </div>
+    
+    <style>
+      .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            height: 90vh;
+          }
+          .main:hover
+          {
+            border-color: blue;
+          }
+          .btn
+          {
+            /* border: 1px solid black;
+            border-radius: 4px; */
+            margin-left: 5px;
+            /* margin-right:5px; */
+            font-size: auto;
+            cursor: pointer;
+            
+          }
+          .info
+          {
+            border: 1px solid black;
+            border-radius: 4px;
+          }
+          .info:hover
+          {
+            border-color: blue;
+            box-shadow: 0px 0px 3px 2px rgb(123, 208, 236);
+          }
+    </style>
+        <script>
+          function multiply() {
+            let a = document.getElementById("n1").value;
+            let b = document.getElementById("n2").value;
+            let c = a * b;
+            document.getElementById("result").innerHTML = c;
+          }
+          function divide() {
+            let a = document.getElementById("n1").value;
+            let b = document.getElementById("n2").value;
+            let c = a / b;
+            c=parseFloat(c).toFixed(3);
+            document.getElementById("result").innerHTML = c;
+          }
+        </script>
+</body>
+</html>

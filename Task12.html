@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 6</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Overpass+Mono" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="wrapper">
+      <form name="mytable" onsubmit="return validate()" action="#">
+        <div class="main-content">
+          <div class="logo1">
+            <div class="header">
+            <h1><i>Instagram</i></h1>
+            </div>
+          </div>
+          <div class="l-part">
+            <div class="f1">
+              <i class="fa-solid fa-user fa-lg" style="position: absolute; margin-left: 0.3%"></i>
+              <input type="text" name="username" id="username" placeholder="Username" class="input-1 in-1"/>
+            </div>
+            <div class="f2" id="f1"></div>
+            <div class="overlap-text">
+              <div class="f1">
+                <i class="fa fa-key fa-lg" style="position: absolute; margin-left: 0.5%" aria-hidden="true"></i>
+                <input type="password" name="password" id="password" placeholder="Password" class="input-2"/>
+              </div>
+              <div id="f2"></div>
+            </div>
+            <button type="submit" class="btn">Log in</button>
+          </div>
+          <br />
+          <div class="flex" style="font-family: Helvetica, Arial, sans-serif;display: flex; justify-content: space-between;">
+            <div style="font-size: 14px">
+              <input type="checkbox" />&nbsp;Remember me
+              <div class="grey"></div>
+            </div>
+            <div>
+              <a style="font-size: 14px" href="#">Forgot Password?</a>
+              <div class="grey1"></div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="sub-content">
+        <div class="s-part">
+          Don't have an account! <a href="#">Sign up here.</a>
+        </div>
+      </div>
+    </div>
+
+    <style>
+            * {
+              margin: 0px;
+              padding: 0px;
+            }
+            i{
+              margin-top:15px;
+            }
+            body {
+              background-color: #ffffff;
+            }
+            .logo1 {
+              display: flex;
+              margin-left: 15%;
+              font-size: 125%;
+              margin-bottom: 5%;
+            }
+            .f1{
+              display:flex;
+            }
+            .logo {
+              width: 100px;
+              height: 100px;
+              margin-left: -10%;
+            }
+            #wrapper {
+              width: 500px;
+              height: 50%;
+              overflow: hidden;
+              border: 0px solid #000;
+              margin: 50px auto;
+              padding: 10px;
+            }
+
+            .main-content {
+              width: 250px;
+              height: 40%;
+              margin: 10px auto;
+              background-color: #fff;
+              border: 2px solid #e6e6e6;
+              padding: 40px 50px;
+              background-color: rgb(244, 244, 244);
+              box-shadow: 0px 2px grey;
+            }
+
+            .header {
+              border: 0px solid #000;
+              margin-bottom: 5px;
+            }
+            input {
+              border: 4px solid lightgray;
+            }
+            .header img {
+              height: 50px;
+              width: 175px;
+              margin-top: 20%;
+              position: relative;
+            }
+
+            .input-1,
+            .input-2 {
+              width: 100%;
+              margin-bottom: 15px;
+              margin-left: 30px;
+              padding: 8px 12px;
+              border: 1px solid #dbdbdb;
+              box-sizing: border-box;
+              border-radius: 3px;
+              text-align: left;
+              background-color: white;
+            }
+            a {
+              text-decoration: none;
+              color: #3897f0;
+            }
+            .overlap-text {
+              position: relative;
+            }
+           
+            input {
+              background-color: #f0f0f0; 
+              border: 1px solid black; 
+            }
+            .grey1 {
+              /* width: 40px;
+              height: 31.5px;
+              margin-top: -105.5%;
+              margin-left: -119.5%;
+              border-top-left-radius: 3px;
+              position: relative;
+
+              background-color: #e8ecef;
+              background: transparent
+                url("https://cdn-icons-png.flaticon.com/512/2889/2889676.png");
+              background-position-x: 40%;
+              background-size: 30px;
+              position: relative;
+              z-index: 2;
+              background-repeat: no-repeat; */
+            }
+            .overlap-text a {
+              position: absolute;
+              top: 8px;
+              right: 10px;
+              color: #003569;
+              font-size: 14px;
+              text-decoration: none;
+              font-family: "Overpass Mono", monospace;
+              letter-spacing: -1px;
+            }
+
+            .btn {
+              width: 100%;
+              background-color: #3897f0;
+              border: 1px solid #3897f0;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              font-size: 15px;
+              color: #fff;
+              font-weight: bold;
+              height: 35px;
+              cursor: pointer;
+              border-radius: 3px;
+            }
+
+            .sub-content {
+              width: 300px;
+              height: 40%;
+              margin: 10px auto;
+              padding: 10px 0px;
+              font-family: Helvetica, Arial, sans-serif;
+            }
+
+            .s-part {
+              text-align: center;
+              font-family: Helvetica, Arial, sans-serif;
+              font-size: 14px;
+            }
+
+            .s-part a {
+              text-decoration: none;
+              font-family: Helvetica, Arial, sans-serif;
+              cursor: pointer;
+              color: #3897f0;
+              font-size: 14px;
+            }
+    </style>
+
+    <script>
+      function validate() {
+        let a = document.forms["mytable"]["username"].value;
+        if (a == "") {
+          var element = document.getElementById("username");
+          element.style.borderWidth = "2px";
+          element.style.borderColor = "red";
+          element.style.borderStyle = "solid";
+          alert("Username is required");
+        }
+        if (a != "") {
+          let b = document.forms["mytable"]["password"].value;
+          if (b == "") {
+            var element = document.getElementById("password");
+            element.style.borderWidth = "2px";
+            element.style.borderColor = "red";
+            element.style.borderStyle = "solid";
+            alert("Password is required");
+          }
+        }
+      }
+    </script>
+    <script src="https://kit.fontawesome.com/3759213e16.js" crossorigin="anonymous"></script>
+  </body>
+</html>
